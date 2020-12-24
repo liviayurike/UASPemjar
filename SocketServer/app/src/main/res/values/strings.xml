@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SocketServer</string>
+    <string name="server_socket">Server Socket</string>
 </resources>

@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
     Thread Thread1 = null;
     EditText edtIP, edtPort;
     TextView tvPesan;
-    Button btnSend,btnFile, btnConnect;
+    Button btnSend,btnFile;
     String SERVER_IP;
     int SERVER_PORT;
     private static final int REQUEST_PATH = 1;
@@ -57,6 +57,15 @@ public class MainActivity extends Activity {
                 }
             }
         });
+        btnFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String message = btnFile.getText().toString().trim();
+                if (!message.isEmpty()) {
+                    new Thread(new Thread3(message)).start();
+                }
+            }
+        });
 
     }
     public void getfile(View view){
@@ -66,12 +75,17 @@ public class MainActivity extends Activity {
     // Listen for results.
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         // See which child activity is calling us back.
-        if (requestCode == REQUEST_PATH){
-            if (resultCode == RESULT_OK) {
-                isi = data.getStringExtra("GetFileName");
-                tvPesan.setText(isi);
+        btnFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (requestCode == REQUEST_PATH) {
+                    if (resultCode == RESULT_OK) {
+                        isi = data.getStringExtra("GetFileName");
+                        tvPesan.setText(isi);
+                    }
+                }
             }
-        }
+        });
     }
 
     private PrintWriter output;

@@ -45,6 +45,7 @@
         android:layout_above="@+id/btnSend"
         android:layout_marginBottom="305dp"
         android:text="Open File"
+        android:onClick="getfile"
         android:textColor="#FDFCFC"
         android:textColorHint="#FFFFFF" />
 

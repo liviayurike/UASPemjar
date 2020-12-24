@@ -41,7 +41,7 @@ public class FileArrayAdapter extends ArrayAdapter<Item> {
             TextView t1 = (TextView) v.findViewById(R.id.tvMessages);
 
             if (t1 != null)
-                t1.setText(o.getName());
+                t1.setText(o.getPesan());
         }
         return v;
     }
