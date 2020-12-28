@@ -41,8 +41,8 @@ public class MainActivity extends Activity {
 
     String upLoadServerUri = null;
 
-    final String uploadFilePath = "/Bluetooth/";
-    final String uploadFileName = "sapaa.txt";
+    final String uploadFilePath = "/storage/sdcard0/Bluetooth/";
+   final String uploadFileName = "sapaa.txt";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +53,8 @@ public class MainActivity extends Activity {
         btnFile = findViewById(R.id.openFile);
         btnSend = findViewById(R.id.btnSend);
         Button btnConnect = findViewById(R.id.btnConnect);
-        tvPesan.setText("Uploading file path :- '/Bluetooth/"+uploadFileName+"'");
-        upLoadServerUri = "serverpath";
+        tvPesan.setText("Uploading file path :- '/storage/sdcard0/Bluetooth/"+uploadFileName+"'");
+        upLoadServerUri = "http://www.androidexample.com/media/UploadToServer.php";
         btnConnect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
